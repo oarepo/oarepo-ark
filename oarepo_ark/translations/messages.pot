@@ -1,0 +1,46 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-18 17:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: oarepo_ark/handlers/rdm_pids.py:35
+#: oarepo_ark/handlers/rdm_pids.py:118
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:36
+msgid "ARK"
+msgstr ""
+
+#: oarepo_ark/handlers/rdm_pids.py:67
+msgid "ARKs are assigned by the repository."
+msgstr ""
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:39
+msgid "Landing page"
+msgstr ""
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:49
+msgid "Export formats"
+msgstr ""
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:53
+msgid "Files"
+msgstr ""
+
+msgid "Select a file of this ARK"
+msgstr ""
+
+msgid "Select an export format of this ARK"
+msgstr ""

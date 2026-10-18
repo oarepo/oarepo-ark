@@ -1,0 +1,30 @@
+#
+msgid ""
+msgstr ""
+
+#: oarepo_ark/handlers/rdm_pids.py:35 oarepo_ark/handlers/rdm_pids.py:118
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:38
+msgid "ARK"
+msgstr "ARK"
+
+#: oarepo_ark/handlers/rdm_pids.py:67
+msgid "ARKs are assigned by the repository."
+msgstr "ARK přiděluje repozitář."
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:48
+msgid "Export formats"
+msgstr "Exportní formáty"
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:52
+msgid "Files"
+msgstr "Soubory"
+
+msgid "Select a file of this ARK"
+msgstr "Vyberte soubor tohoto ARK"
+
+msgid "Select an export format of this ARK"
+msgstr "Vyberte exportní formát tohoto ARK"
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:39
+msgid "Landing page"
+msgstr "Stránka záznamu"

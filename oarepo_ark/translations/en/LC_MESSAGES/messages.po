@@ -1,0 +1,30 @@
+#
+msgid ""
+msgstr ""
+
+#: oarepo_ark/handlers/rdm_pids.py:35 oarepo_ark/handlers/rdm_pids.py:118
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:38
+msgid "ARK"
+msgstr ""
+
+#: oarepo_ark/handlers/rdm_pids.py:67
+msgid "ARKs are assigned by the repository."
+msgstr ""
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:48
+msgid "Export formats"
+msgstr ""
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:52
+msgid "Files"
+msgstr ""
+
+msgid "Select a file of this ARK"
+msgstr ""
+
+msgid "Select an export format of this ARK"
+msgstr ""
+
+#: oarepo_ark/templates/semantic-ui/oarepo_ark/ark_identifier.html:39
+msgid "Landing page"
+msgstr ""

@@ -1,0 +1,62 @@
+{#
+  SPDX-FileCopyrightText: 2026 CESNET z.s.p.o
+  SPDX-License-Identifier: MIT
+
+  ARK box for the record detail page sidebar (InvenioRDM and oarepo-ui), e.g.:
+    APP_RDM_DETAIL_SIDE_BAR_TEMPLATES = [..., "oarepo_ark/ark_identifier.html"]
+  Uses the detail page's ``record_ui`` (elsewhere pass ``record``) and, if present, ``files`` and the
+  export formats (oarepo-ui: ``model.exports``, InvenioRDM: ``APP_RDM_RECORD_EXPORTERS``).
+
+  - "ARK | value" badge + copy button, like RDM's DOI (the copy button is mounted by invenio-app-rdm's
+    theme.js on ``.copy-doi-button``);
+  - dropdowns of the ARK URLs of the export formats (``<ark>.<code>``) and files
+    (``<ark>/files/<key>``), each with a copy button (mounted by the ``oarepo_ark_links`` bundle).
+#}
+{%- set ark_record = record_ui if record_ui is defined else record -%}
+{%- set ark = ark_identifier(ark_record) -%}
+{%- if ark %}
+{%- set ark_href = ark_url(ark_record) %}
+{%- set export_options = [] %}
+{%- if model is defined and model.exports is defined %}
+  {%- for exporter in model.exports if exporter.display %}
+    {%- set _ = export_options.append({"name": exporter.name | string, "url": ark_href ~ "." ~ exporter.code}) %}
+  {%- endfor %}
+{%- else %}
+  {%- for code, exporter in config.get("APP_RDM_RECORD_EXPORTERS", {}).items() %}
+    {%- set _ = export_options.append({"name": exporter.get("name", code) | string, "url": ark_href ~ "." ~ code}) %}
+  {%- endfor %}
+{%- endif %}
+{%- set file_options = [] %}
+{%- if files is defined and files %}
+  {%- for entry in files.get("entries") or [] %}
+    {%- set _ = file_options.append({"name": entry.key, "url": ark_href ~ "/files/" ~ entry.key | urlencode}) %}
+  {%- endfor %}
+{%- endif %}
+<div class="sidebar-container">
+  <h2 class="ui medium top attached header mt-0">{{ _("ARK") }}</h2>
+  <div id="ark-identifier" class="ui segment bottom attached rdm-sidebar">
+    <dl class="details-list">
+      <dt class="ui tiny header">{{ _("Landing page") }}</dt>
+      <dd>
+        <span class="details-doi-section">
+          <a href="{{ ark_href }}" title="{{ ark_href }}">
+            <img id="record-ark-badge" src="{{ url_for('oarepo_ark.badge', ark=ark) }}" alt="{{ ark }}" />
+          </a>
+          <div id="copy-button-record-ark-badge" class="copy-doi-button" data-value="{{ ark_href }}" data-size="mini"></div>
+        </span>
+      </dd>
+      {%- if export_options %}
+      <dt class="ui tiny header">{{ _("Export formats") }}</dt>
+      <dd><div class="oarepo-ark-links" data-kind="exports" data-options='{{ export_options | tojson }}'></div></dd>
+      {%- endif %}
+      {%- if file_options %}
+      <dt class="ui tiny header">{{ _("Files") }}</dt>
+      <dd><div class="oarepo-ark-links" data-kind="files" data-options='{{ file_options | tojson }}'></div></dd>
+      {%- endif %}
+    </dl>
+  </div>
+</div>
+{%- if export_options or file_options %}
+{{ webpack['oarepo_ark_links.js'] }}
+{%- endif %}
+{%- endif %}
