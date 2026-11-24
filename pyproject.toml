@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "oarepo-ark"
-version = "1.0.0"
+version = "2.0.0a1"
 description = "ARK (Archival Resource Key) minting and resolution for Invenio / OARepo repositories"
 readme = "README.md"
 license = "MIT"
